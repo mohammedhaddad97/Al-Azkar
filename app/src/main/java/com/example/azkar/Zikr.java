@@ -14,6 +14,8 @@ public class Zikr {
         mNumOfRepetitions = numOfRepetitions;
     }
 
+    public Zikr() {};
+
     public String getZikrText() {
         return mZikrText;
     }
@@ -45,6 +47,6 @@ public class Zikr {
     @NonNull
     @Override
     public String toString() {
-        return mZikrText + " || " + mAddInfo + "||" + mNumOfRepetitions;
+        return "\n" + mZikrText + "\n\n" + mAddInfo + "\n\n" + mNumOfRepetitions +"\n\n";
     }
 }
