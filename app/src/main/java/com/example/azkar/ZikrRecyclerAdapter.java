@@ -86,6 +86,9 @@ public class ZikrRecyclerAdapter extends RecyclerView.Adapter<ZikrRecyclerAdapte
                     String s = mNumReps.getText().toString();
                     int n = Integer.valueOf(s);
                     n--;
+                    if(n <= 0) {
+                        n = 0;
+                    }
                     mNumReps.setText(Integer.toString(n));
 
                 }
