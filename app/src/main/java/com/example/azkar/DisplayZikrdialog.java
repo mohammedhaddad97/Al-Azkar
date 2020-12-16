@@ -11,13 +11,20 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 
 public class DisplayZikrdialog extends AppCompatDialogFragment {
+
+    String mAddInfo;
+
+    public DisplayZikrdialog(String addInfo) {
+        mAddInfo = addInfo;
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle("الذكر")
-                .setMessage(Alazkar.zikrClicked)
+                .setMessage(mAddInfo)
                 .setPositiveButton("حسنًا", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -1,6 +1,8 @@
 package com.example.azkar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,7 +32,8 @@ public class Alazkar extends AppCompatActivity {
 
     }
 
-        private void displayAzkar(String zikrType) {
+
+    private void displayAzkar(String zikrType) {
 
             List<Zikr> azkar = new ArrayList<>();
 
@@ -41,25 +44,37 @@ public class Alazkar extends AppCompatActivity {
                 azkar = DataManager.getInstance().getSabahZikr();
             }
 
-            ListView masaaListView = findViewById(R.id.azkar_list_view);
+            // The ListView and all the code related to it would be removed and replaced
+            // with a RecyclerView and code related to it.
 
-            ArrayAdapter<Zikr> azkarAdapter =
-                    new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, azkar);
-            masaaListView.setAdapter(azkarAdapter);
+//            ListView masaaListView = findViewById(R.id.azkar_list_view);
+//
+//            ArrayAdapter<Zikr> azkarAdapter =
+//                    new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, azkar);
+//            masaaListView.setAdapter(azkarAdapter);
+//
+//            List<Zikr> finalAzkar = azkar;
+//            masaaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+//
+//                    zikrClicked = finalAzkar.get(position).getZikrText();
+//
+//                    DisplayZikrdialog displayZikrdialog = new DisplayZikrdialog();
+//
+//                    displayZikrdialog.show(getSupportFragmentManager(), "Example Dialog");
+//
+//                }
+//            });
 
-            List<Zikr> finalAzkar = azkar;
-            masaaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+            RecyclerView zikrRecyclerView = findViewById(R.id.list_zikr);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            zikrRecyclerView.setLayoutManager(linearLayoutManager);
 
-                    zikrClicked = finalAzkar.get(position).getZikrText();
+            ZikrRecyclerAdapter zikrRecyclerAdapter =
+                    new ZikrRecyclerAdapter(this, azkar);
 
-                    DisplayZikrdialog displayZikrdialog = new DisplayZikrdialog();
-
-                    displayZikrdialog.show(getSupportFragmentManager(), "Example Dialog");
-
-                }
-            });
+            zikrRecyclerView.setAdapter(zikrRecyclerAdapter);
 
         }
 }

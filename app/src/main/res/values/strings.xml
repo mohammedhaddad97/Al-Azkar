@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">أذكار الصباح والمساء</string>
+    <string name="zikr_type">الأذكار</string>
 </resources>

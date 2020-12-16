@@ -6,13 +6,14 @@ public class Zikr {
     private String mZikrText;
     private String mAddInfo;
     private int mNumOfRepetitions;
-//    private boolean mIsSabah = true;
+    private int FIXED_REPS;
 
     public Zikr(String zikrText, String addInfo, int numOfRepetitions) {
         mZikrText = zikrText;
         mAddInfo = addInfo;
         mNumOfRepetitions = numOfRepetitions;
     }
+
 
     public Zikr() {};
 
@@ -42,6 +43,18 @@ public class Zikr {
         } else {
             mNumOfRepetitions = numOfRepetitions;
         }
+    }
+
+    public void decreaseReps() {
+        mNumOfRepetitions--;
+
+        if(mNumOfRepetitions <= 0) {
+            mNumOfRepetitions = 0;
+        }
+    }
+
+    public void repsReset(int og) {
+        mNumOfRepetitions = og;
     }
 
     @NonNull
