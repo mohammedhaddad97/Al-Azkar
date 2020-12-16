@@ -68,7 +68,6 @@ public class ZikrRecyclerAdapter extends RecyclerView.Adapter<ZikrRecyclerAdapte
         public final TextView mNumReps;
         public final ImageView mAddInfo;
         public int mCurrentPos;
-        private int ogValue;
         private final ImageView mReset;
 
         public ViewHolder(@NonNull View itemView) {
@@ -79,19 +78,26 @@ public class ZikrRecyclerAdapter extends RecyclerView.Adapter<ZikrRecyclerAdapte
             mAddInfo = itemView.findViewById(R.id.add_info);
             mReset = itemView.findViewById(R.id.button_reset);
 
-
-            Zikr zikr = mAzkar.get(mCurrentPos);
-            ogValue = zikr.getNumOfRepetitions();
-
             mZikrMessage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+
+                    String s = mNumReps.getText().toString();
+                    int n = Integer.valueOf(s);
+                    n--;
+                    mNumReps.setText(Integer.toString(n));
+
+                }
+            });
+
+            mReset.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
                     Zikr mZikr = mAzkar.get(mCurrentPos);
+                    int n = mZikr.getNumOfRepetitions();
 
-                    mZikr.decreaseReps();
-
-                    mNumReps.setText(Integer.toString(mZikr.getNumOfRepetitions()));
-
+                    mNumReps.setText(Integer.toString(n));
                 }
             });
 
@@ -106,17 +112,6 @@ public class ZikrRecyclerAdapter extends RecyclerView.Adapter<ZikrRecyclerAdapte
                     displayZikrdialog.show(((FragmentActivity)mContext).getSupportFragmentManager(), "Zikr Message");
                 }
             });
-
-            mReset.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Zikr mZikr = mAzkar.get(mCurrentPos);
-                    mZikr.repsReset(ogValue);
-
-                    mNumReps.setText(Integer.toString(mZikr.getNumOfRepetitions()));
-                }
-            });
-
         }
     }
 
