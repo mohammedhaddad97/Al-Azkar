@@ -13,7 +13,10 @@ alt="My first personal Project Video on YouTube" width="240" height="180" border
 	 <a href="http://www.youtube.com/watch?feature=player_embedded&v=mAPCFMIP4cg
 " target="_blank"><img src="http://img.youtube.com/vi/mAPCFMIP4cg/0.jpg" 
 alt="My first personal Project Video on YouTube" width="240" height="180" border="10" /></a>
-
+3. ### Part 3 -My final & desired stage-
+	 <a href="http://www.youtube.com/watch?feature=player_embedded&v=U6AaELzdCdE
+" target="_blank"><img src="http://img.youtube.com/vi/U6AaELzdCdE/0.jpg" 
+alt="My first personal Project Video on YouTube" width="240" height="180" border="10" /></a>
 ## Why I built this App?
 The whole purpose of building this App, is to practice and apply the concepts that I learned in the **Jim Wilson\'s Pluralsight course:** [Android Application Basics](https://app.pluralsight.com/library/courses/android-application-basics-understanding/table-of-contents), And this App -insha'Allah- will be my to-practice-upon app, I'll keep updating and improving it with every new concept that I learn, but that doesn't mean I won't build more projects, I'll definitely do that -insha'Allah- 
 
@@ -43,7 +46,7 @@ The whole purpose of building this App, is to practice and apply the concepts th
  - How to set up the depndencies for the Instrumented Testing.
  - A brief intro about the Test-Driven Philosophy.
 
-## How I built the App? And Upates:
+## How I built the App? And Updates:
 I really struggled with this part, I had no idea how to start thinking or planning the App, first of all I'm a terrible designer, but -Alhamdulillah- I managed to come up with a design in my mind -of course couldn't build the project exactly as I imagined it because still I need more concepts to be able to do it, and -insha'Allah- I'll update it once I learn those new concepts in the future.
 then, looked at the data that I'll use in my app and it appeared to be one thing which is `Alzikr` both kinds, morning duaa, and evening duaa, so I made one class for them, then made three memeber variables for the three pieces of information that each zikr might have, and then used the same design pattern Jim uses in his code which is the `Singleton Design Pattern`, of course that's a ver basic and simple app, but I'm happy that I finally made the move and built something of my own rather than just copying something.
 
@@ -53,7 +56,18 @@ In this update, I applied the Testing concepts that I learned.
 
  - Tested the Java -Back End- code of the App with `JUnit`.
  - Tested the UI of the App using the `Espresso` and `Hamcrest` libraries, also JUnit.
- - And finally added an `Alert Dialog` that would pop-up and display a text on clicking any item in the `Listview` 
+ - And finally added an `Alert Dialog` that would pop-up and display a text on clicking any item in the `Listview` .
+
+## Second Update:
+Finally I've hit the desired result of the app, nothing too fancy, but I'm happy I've made it. And it really served the purpose which was to:
+1. Apply the concepts that I learned, and just start building projects.
+2. Build something useful, and I think this App's content is far more than useful -Alhamdulillah, meaning; Thank God in Arabic-.
+---
+
+> That's it for this App -Well might learn Fragments and apply them here too.-
+> See you in the next Project. Peace be upon you all!
+
+  
 
 #### Credits:
 
